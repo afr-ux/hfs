@@ -57,3 +57,8 @@ ol, ul { margin-top: .2em; margin-bottom: .2em; padding-left: 1.5em; }
   animation: animate-dash 1s alternate linear infinite;
 }
 @keyframes animate-dash { to { background-position: 20px 0; } }
+
+@keyframes blink {
+  0% {opacity: 1}
+  50% {opacity: 0.2}
+}
