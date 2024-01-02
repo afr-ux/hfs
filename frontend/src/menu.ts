@@ -147,7 +147,7 @@ export function MenuPanel() {
 }
 
 interface MenuButtonProps extends ComponentPropsWithoutRef<"button"> {
-    icon: string,
+    icon?: string,
     label: string,
     tooltip?: string,
     toggled?: boolean,
@@ -166,9 +166,9 @@ export function MenuButton({ icon, label, tooltip, toggled, onClick, onClickAnim
                 setWorking(true)
             Promise.resolve(onClick()).finally(() => setWorking(false))
         },
-        className: [rest.className, toggled && 'toggled', working && 'ani-working'].filter(Boolean).join(' '),
         ...rest,
-    }, hIcon(icon), h('label', {}, label) )
+        className: [rest.className, toggled && 'toggled', working && 'ani-working'].filter(Boolean).join(' '),
+    }, icon && hIcon(icon), h('label', {}, label) )
 }
 
 export function MenuLink({ href, target, confirm, confirmOptions, ...rest }: MenuButtonProps & { href: string, target?: string, confirm?: string, confirmOptions?: ConfirmOptions }) {
