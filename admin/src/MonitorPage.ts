@@ -196,8 +196,8 @@ function Connections() {
                 h(IconBtn, {
                     icon: LinkOff,
                     title: "Disconnect",
-                    onClick: () => apiCall('disconnect', _.pick(row, ['ip', 'port']))
-                        .then(() => toast("Disconnection requested")),
+                    doneMessage: true,
+                    onClick: () => apiCall('disconnect', _.pick(row, ['ip', 'port'])).then(x => x.result > 0)
                 }),
                 h(IconBtn, {
                     icon: Block,
