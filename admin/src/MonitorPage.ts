@@ -10,7 +10,6 @@ import { formatBytes, ipForUrl, manipulateConfig, CFG, formatSpeed, with_ } from
 import { IconBtn, IconProgress, iconTooltip, usePauseButton, useBreakpoint, Country } from './mui'
 import { Field, SelectField } from '@hfs/mui-grid-form'
 import { StandardCSSProperties } from '@mui/system/styleFunctionSx/StandardCssProperties'
-import { toast } from "./dialog"
 import { agentIcons } from './LogsPage'
 import { state, useSnapState } from './state'
 
